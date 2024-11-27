@@ -1,27 +1,38 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AppContext from '../UseContext/AppContext';
+import CustomBackground from '../components/CustomBackground';
 
 const Index = () => {
+  const Stack = createNativeStackNavigator();
   return (
-    <View style={styles.mainContainer}>
-      <Text style={styles.mainHeading}>Index</Text>
-    </View>
+    <AppContext.Provider>
+      <CustomBackground>
+        {/* <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen 
+            name='Login' 
+            component={""}
+          />
+          <Stack.Screen 
+            name='Registration' 
+            component={""}
+          />
+          <Stack.Screen 
+            name='Admin Login' 
+            component={""}
+          />
+          <Stack.Screen 
+            name='Home' 
+            component={""}
+          />
+          <Stack.Screen 
+            name='notFound' 
+            component={""}
+          />
+        </Stack.Navigator> */}
+      </CustomBackground>
+    </AppContext.Provider>
   )
 }
 
 export default Index
-
-const styles = StyleSheet.create({
-    mainContainer: {
-        display:"flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    mainHeading:{
-        margin:"10px",
-        fontSize:"30px",
-        fontWeight: "bold",
-        fontFamily:"calibri"
-    }
-})
