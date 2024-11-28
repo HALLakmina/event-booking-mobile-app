@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, Linking} from 'react-native'
 import React from 'react'
 import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/CustomButton'
@@ -20,9 +20,15 @@ const LoginScreen = () => {
         <Text style={{fontSize:"18px", color:"white"}}>Don't have an account ? <Link to={{ screen: 'Registration'}}>Sign up</Link> </Text>
         <Text style={{fontSize:"18px",fontWeight:"bold", color:"white", marginVertical:"30px"}}>OR</Text>
         <View style={styles.imagesBox}>
-          <Image source={require('../../assets/images/social-media/google.png')} style={styles.image}/>
-          <Image source={require('../../assets/images/social-media/twitter.png')} style={styles.image}/>
-          <Image source={require('../../assets/images/social-media/instagram.png')} style={styles.image}/>
+          <TouchableOpacity onPress={() => Linking.openURL('https://accounts.google.com/v3/signin/identifier?flowEntry=ServiceLogin&flowName=GlifWebSignIn&hl=en-GB&ifkv=AcMMx-eZY_Rf5xrkNbx3r34ddiR73_79Ac8O5_tSeLMD9W9aAcjFS3rSrmEGKstYNc18FGKs7tTZtA&dsh=S-2112245626%3A1732781437560785&ddm=1')} >
+            <Image source={require('../../assets/images/social-media/google.png')} style={styles.image}/>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => Linking.openURL('https://x.com/i/flow/login')} >
+            <Image source={require('../../assets/images/social-media/twitter.png')} style={styles.image}/>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/accounts/login')} >
+            <Image source={require('../../assets/images/social-media/instagram.png')} style={styles.image}/>
+          </TouchableOpacity>
         </View>
       </View>
     </CustomBackground>
