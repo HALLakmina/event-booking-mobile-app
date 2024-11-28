@@ -2,18 +2,20 @@ import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AppContext from '../UseContext/AppContext';
 import CustomBackground from '../components/CustomBackground';
+import LoginScreen from './Login'
+
 
 const Index = () => {
   const Stack = createNativeStackNavigator();
   return (
     <AppContext.Provider>
       <CustomBackground>
-        {/* <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen 
             name='Login' 
-            component={""}
+            component={LoginScreen}
           />
-          <Stack.Screen 
+          {/* <Stack.Screen 
             name='Registration' 
             component={""}
           />
@@ -28,8 +30,8 @@ const Index = () => {
           <Stack.Screen 
             name='notFound' 
             component={""}
-          />
-        </Stack.Navigator> */}
+          /> */}
+        </Stack.Navigator>
       </CustomBackground>
     </AppContext.Provider>
   )
