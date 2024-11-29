@@ -11,8 +11,9 @@ export default TextHeading
 
 const styles = StyleSheet.create({
     headingStyle:{
-        fontSize:"30px",
+        fontSize:"35px",
         fontFamily:"Calibri",
+        fontWeight:"bold",
         textAlign:"center",
         marginBlock:"50px",
         color:"white"

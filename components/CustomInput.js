@@ -2,9 +2,15 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { TextInput } from 'react-native-web'
 
-const CustomInput = ({placeholder, onChange}) => {
+const CustomInput = ({placeholder, value, onChange, secureTextEntry=false }) => {
   return (
-    <TextInput placeholder={placeholder} onChange={onChange} style={styles.Inputfield}/>
+    <TextInput 
+      placeholder={placeholder} 
+      onChange={onChange} 
+      style={styles.Inputfield} 
+      secureTextEntry={secureTextEntry} 
+      value={value}
+    />
   )
 }
 
