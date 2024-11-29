@@ -4,7 +4,7 @@ import React from "react";
 
 const EventComponent = ({ image, title, subTitle, date, description }) => {
   return (
-    <View>
+    <View style={{display:"flex", flexDirection:"column", justifyContent: "center", alignItems: "center"}}>
       <View style={styles.imageContainer}>
         <Image source={image} style={styles.posterImage} resizeMode="cover" />
       </View>
@@ -20,11 +20,8 @@ const EventComponent = ({ image, title, subTitle, date, description }) => {
         <Text style={styles.sectionHeader}>ABOUT</Text>
         <Text style={styles.description}>
           {description}
-          <Text style={styles.readMore}>READ MORE..</Text>
         </Text>
       </View>
-
-
     </View>
   );
 };
@@ -37,16 +34,17 @@ const styles = StyleSheet.create({
         marginVertical: 10,
       },
       posterImage: {
-        width: "90%",
-        height: 400,
-        borderRadius: 10,
+        width: "304px",
+        height: "453px",
+        borderRadius: "20px",
       },
       detailsContainer: {
         paddingHorizontal: 20,
         paddingTop: 20,
+        width: "300px",
       },
       title: {
-        color: "yellow",
+        color: "white",
         fontSize: 18,
         fontWeight: "bold",
         marginBottom: 10,
@@ -57,7 +55,7 @@ const styles = StyleSheet.create({
         marginBottom: 5,
       },
       sectionHeader: {
-        color: "yellow",
+        color: "white",
         fontSize: 16,
         fontWeight: "bold",
         marginTop: 20,
@@ -67,9 +65,5 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 14,
         lineHeight: 20,
-      },
-      readMore: {
-        color: "yellow",
-        fontWeight: "100",
       },
 });
