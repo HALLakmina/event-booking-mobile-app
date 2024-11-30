@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 
-const HomeComponent = ({ image, title, description }) => {
+const HomeComponent = ({ image= any, title, description, key, onPress  }) => {
   return (
-    <View style={styles.eventCard}>
+    <View style={styles.eventCard} key={key}>
       <View style={styles.eventImageContainer}>
         <Image source={image} style={styles.eventImage} />
       </View>
@@ -11,7 +11,7 @@ const HomeComponent = ({ image, title, description }) => {
         <Text style={styles.eventTitle}>{title}</Text>
         <Text style={styles.eventDescription}>{description}</Text>
         <TouchableOpacity>
-          <Text style={styles.readMore}>READ MORE →</Text>
+          <TouchableOpacity onPress={onPress}style={styles.readMore}>READ MORE →</TouchableOpacity>
         </TouchableOpacity>
       </View>
     </View>
