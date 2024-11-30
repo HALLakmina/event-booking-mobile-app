@@ -9,14 +9,16 @@ const HomeStack = () => {
   const Stack = createNativeStackNavigator();
 
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator>
           <Stack.Screen 
             name='home' 
             component={Home}
+            options={{title: ''}}
           />
           <Stack.Screen 
             name='read-more-event' 
             component={ReadMoreEvent}
+            options={{title: 'Event'}}
           />
       </Stack.Navigator>
   )
