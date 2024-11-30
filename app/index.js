@@ -13,16 +13,16 @@ const Index = () => {
     <AppContext.Provider>
         <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen 
-            name='tab-screen' 
-            component={TabScreen}
-          />
-          <Stack.Screen 
             name='login' 
             component={Login}
           />
            <Stack.Screen 
             name='registration' 
             component={Registration}
+          />
+          <Stack.Screen 
+            name='tab-screen' 
+            component={TabScreen}
           />
           {/*<Stack.Screen 
             name='Home' 
