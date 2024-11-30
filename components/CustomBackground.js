@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { ScrollView } from 'react-native-web'
 
 const CustomBackground = ({children}) => {
   return (
     <View style={styles.mainContainer}>
-      <View style={styles.screenSize}>
+      <ScrollView style={styles.screenSize} showsVerticalScrollIndicator={false} >
         {children}
-      </View>
+      </ScrollView>
     </View>
   )
 }
