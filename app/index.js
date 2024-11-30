@@ -2,7 +2,7 @@ import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AppContext from '../UseContext/AppContext';
 import CustomBackground from '../components/CustomBackground';
-import LoginScreen from './Login'
+import LoginScreen from './login'
 import Registration from './registration';
 
 

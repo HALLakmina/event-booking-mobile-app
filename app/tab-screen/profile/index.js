@@ -1,13 +1,7 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  FlatList,
-} from "react-native";
+import {View,Text,Image,StyleSheet,TouchableOpacity,FlatList } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import CustomBackground from "../../../components/CustomBackground";
 
 const Profile =()=> {
   const [expandedItems, setExpandedItems] = useState([]);
@@ -54,18 +48,18 @@ const Profile =()=> {
   ];
 
   return (
-    <View style={styles.container}>
+    <CustomBackground style={styles.container}>
       {/* Profile Section */}
       <View style={styles.profileContainer}>
         <Image
-          source={require("../assets/images/profilePic.png")}
+          source={require('../../../assets/images/profile-image.jpg')}
           style={styles.profileImage}
         />
 
         <View style={styles.profileDetails}>
           <Text style={styles.profileName}>JONATHON WILLIANSMAN</Text>
           <TouchableOpacity>
-            <Ionicons name="create-outline" size={20} color="yellow" />
+            <Ionicons name="create-outline" size={20} color="#FCC300" />
           </TouchableOpacity>
         </View>
       </View>
@@ -81,19 +75,16 @@ const Profile =()=> {
       {/* Bottom Navigation */}
       <View style={styles.bottomNavigation}>
         <TouchableOpacity>
-          <Ionicons name="home-outline" size={28} color="yellow" />
+          <Ionicons name="home-outline" size={28} color="#FCC300" />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Ionicons name="heart-outline" size={28} color="yellow" />
+          <Ionicons name="heart-outline" size={28} color="#FCC300" />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Ionicons name="ticket-outline" size={28} color="yellow" />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Ionicons name="settings-outline" size={28} color="yellow" />
+          <Ionicons name="person-outline" size={28} color="#FCC300" />
         </TouchableOpacity>
       </View>
-    </View>
+    </CustomBackground>
   );
 }
 export default Profile
@@ -111,7 +102,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     margin: 20,
     borderWidth: 1,
-    borderColor: "yellow",
+    borderColor: "#FCC300",
   },
   profileImage: {
     width: 70,
@@ -142,7 +133,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginVertical: 8,
     borderWidth: 1,
-    borderColor: "yellow",
+    borderColor: "#FCC300",
   },
   listText: {
     color: "white",
@@ -164,6 +155,6 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     backgroundColor: "#222",
     borderTopWidth: 1,
-    borderColor: "yellow",
+    borderColor: "#FCC300",
   },
 });
