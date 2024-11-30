@@ -5,7 +5,7 @@ import CustomButton from '../../components/CustomButton'
 import CustomBackground from '../../components/CustomBackground'
 import TextHeading from '../../components/TextHeading'
 
-const LoginScreen = ({navigation}) => {
+const Login = ({navigation}) => {
   return (
     <CustomBackground>
       <View style={styles.loginPageContainer}>
@@ -34,7 +34,7 @@ const LoginScreen = ({navigation}) => {
   )
 }
 
-export default LoginScreen
+export default Login
 
 const styles = StyleSheet.create({
   loginPageContainer: {
