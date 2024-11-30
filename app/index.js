@@ -11,8 +11,11 @@ const Index = () => {
   const Stack = createNativeStackNavigator();
   return (
     <AppContext.Provider>
-      <CustomBackground>
         <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen 
+            name='tab-screen' 
+            component={TabScreen}
+          />
           <Stack.Screen 
             name='login' 
             component={Login}
@@ -20,10 +23,6 @@ const Index = () => {
            <Stack.Screen 
             name='registration' 
             component={Registration}
-          />
-          <Stack.Screen 
-            name='tab-screen' 
-            component={TabScreen}
           />
           {/*<Stack.Screen 
             name='Home' 
@@ -34,7 +33,6 @@ const Index = () => {
             component={""}
           /> */}
         </Stack.Navigator>
-      </CustomBackground>
     </AppContext.Provider>
   )
 }
