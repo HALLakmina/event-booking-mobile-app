@@ -2,6 +2,8 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React from 'react'
 import CustomBackground from '../../../../components/CustomBackground'
 import HomeComponent from '../../../../components/HomeComponent'
+import TextHeading from '../../../../components/TextHeading'
+import SearchBar from '../../../../components/SearchBar'
 
 
 const Home = ({navigation}) => {
@@ -39,6 +41,10 @@ const Home = ({navigation}) => {
     
     <CustomBackground>
         <ScrollView scrollEnabled={true}>
+          <TextHeading>
+            Select Event
+          </TextHeading>
+          <SearchBar/>
           <View style={{display: 'flex', flexDirection: 'column',alignItems: 'center',justifyContent: 'center'}}>
             {
               events.map((event, index) =>(
