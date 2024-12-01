@@ -1,7 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import CustomBackground from '../../components/CustomBackground'
 import Home from './home';
 import BookingTicket from './booking-ticket';
 import Profile from './profile';
@@ -34,5 +32,3 @@ const Tab = createBottomTabNavigator();
 }
 
 export default TabScreen
-
-const styles = StyleSheet.create({})
