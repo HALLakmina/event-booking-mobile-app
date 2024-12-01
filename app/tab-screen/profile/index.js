@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {View,Text,Image,StyleSheet,TouchableOpacity,FlatList } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import CustomBackground from "../../../components/CustomBackground";
+import TextHeading from "../../../components/TextHeading";
 
 const Profile =()=> {
   const [expandedItems, setExpandedItems] = useState([]);
@@ -49,7 +50,9 @@ const Profile =()=> {
 
   return (
     <CustomBackground style={styles.container}>
-      {/* Profile Section */}
+      <TextHeading>
+        Profile
+      </TextHeading>
       <View style={styles.profileContainer}>
         <Image
           source={require('../../../assets/images/profile-image.jpg')}
@@ -71,19 +74,6 @@ const Profile =()=> {
         renderItem={renderItem}
         contentContainerStyle={styles.listContainer}
       />
-
-      {/* Bottom Navigation */}
-      <View style={styles.bottomNavigation}>
-        <TouchableOpacity>
-          <Ionicons name="home-outline" size={28} color="#FCC300" />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Ionicons name="heart-outline" size={28} color="#FCC300" />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Ionicons name="person-outline" size={28} color="#FCC300" />
-        </TouchableOpacity>
-      </View>
     </CustomBackground>
   );
 }
