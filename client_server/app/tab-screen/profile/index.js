@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {View,Text,Image,StyleSheet,TouchableOpacity,FlatList } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import CustomBackground from "../../../components/CustomBackground";
 import TextHeading from "../../../components/TextHeading";
+import { findUsers } from "../../../APIS/UsersApi";
 
 const Profile =()=> {
   const [expandedItems, setExpandedItems] = useState([]);
+  const [userData, setUserData] = useState({})
+  useEffect(()=>{
+    getUserProfile()
+  },[])
+  const getUserProfile = async()=>{
+    const responds = await findUsers()
+    setUserData(responds.data)
+    console.log(responds.data)
+  }
+
 
   const handleToggle = key => {
     if (expandedItems.includes(key)) {
@@ -40,11 +51,11 @@ const Profile =()=> {
 
   const data = [
     {
-      key: "email",
-      title: "E-mail",
-      content: "jonathon.williamsman@example.com",
+      key: "name",
+      title: "Name",
+      content: userData.name,
     },
-    { key: "phone", title: "Phone number", content: "+123 456 789" },
+    { key: "email", title: "E-Mail", content: userData.email},
     { key: "address", title: "Address", content: "123 Main St, Springfield" },
   ];
 

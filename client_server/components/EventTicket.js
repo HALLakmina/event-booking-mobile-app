@@ -3,23 +3,23 @@ import React from 'react'
 import Ticket from '../app/tab-screen/booking-ticket/ticket'
 import CustomBackground from './CustomBackground'
 
-const EventTicket = () => {
+const EventTicket = ({ image, title, subTitle, date, description }) => {
   return (
     <View style={styles.ticketContainer}>
       <Image source={require('../assets/images/tickets/ticket-01.png')} style={styles.ticketImage}/>
       <View style={styles.detailsBox}>
-        <Text style={styles.title}>{"DRINK WEEK >> WITH DJ EVENT"}</Text>
+        <Text style={styles.title}>{title}</Text>
         <View>
             <Text style={styles.topic}>Name</Text>
-            <Text style={styles.description}>JONATHON WILLIANSMAN</Text>
+            <Text style={styles.description}>{subTitle}</Text>
         </View>
         <View>
             <Text style={styles.topic}>Date</Text>
-            <Text style={styles.description}>{"SAT / JUNE 25 / 5:00PM"}</Text>
+            <Text style={styles.description}>{date}</Text>
         </View>
         <View>
-            <Text style={styles.topic}>Place</Text>
-            <Text style={styles.description}>{"NEW YORK CITY"}</Text>
+            <Text style={styles.topic}>Description</Text>
+            <Text style={styles.description}>{description}</Text>
         </View>
       </View>
     </View>

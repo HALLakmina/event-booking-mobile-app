@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 
-const HomeComponent = ({ image= any, title, description, key, onPress  }) => {
+const HomeComponent = ({ image, title, description, key, onPress  }) => {
   return (
     <View style={styles.eventCard} key={key}>
       <View style={styles.eventImageContainer}>

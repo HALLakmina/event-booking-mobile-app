@@ -4,7 +4,7 @@ import React from "react";
 
 const EventComponent = ({ image, title, subTitle, date, description }) => {
   return (
-    <View style={{display:"flex", flexDirection:"column", justifyContent: "center", alignItems: "center"}}>
+    <View style={{display:"flex", flexDirection:"column", justifyContent: "center", alignItems: "center", marginBottom:"30px"}}>
       <View style={styles.imageContainer}>
         <Image source={image} style={styles.posterImage} resizeMode="cover" />
       </View>

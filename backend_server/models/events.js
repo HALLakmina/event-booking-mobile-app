@@ -6,6 +6,7 @@ const eventsSchema = new schema({
     sub_title: { type: String, required : true},
     date_and_time: { type: String, required : true},
     description: { type: String, required : true},
+    image: { type: String, required : true},
     createdBy: { type : String, required : false },
     updatedBy: { type : String, required : false },
     
