@@ -9,6 +9,7 @@ const eventsReqBodyValidatorCreateConfig = {
     sub_title: Joi.string().required(),
     date_and_time: Joi.string().required(),
     description: Joi.string().required(),
+    image: Joi.string().required(),
 }
 
 const eventsReqBodyValidatorUpdateConfig = {

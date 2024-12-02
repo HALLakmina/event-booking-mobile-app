@@ -66,15 +66,13 @@ router.patch('/', auth, async (req, res, next) => {
   try {
     const userEmail = req.user.email;
     const payload = req.body;
-    console.log("RUN")
+    console.log(payload)
     const isFoundUser = await users.findUserByEmail(userEmail)
-    console.log("RUN1")
     if (!isFoundUser) {
       return responseUtils.notFoundResponse(res,responseMessages.common.notFound('Booking Event'));
     }else{
-      console.log("RUN2")
-      await users.bookingEvent(userEmail, payload)
-      console.log("RUN3")
+      const updateUser = await users.bookingEvent(userEmail, payload)
+      console.log(updateUser)
       return responseUtils.updateResponse(res,responseMessages.common.updatedById('Booking Event'));
     }
   } catch (err) {

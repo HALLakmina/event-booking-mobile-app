@@ -25,10 +25,11 @@ const createUser = async (payload) => {
 
 const bookingEvent = async (email, payload) =>{
     try{
-        const {bookingTickets} = payload
+        const {tickets} = payload
+        console.log(tickets)
         const updateBookingEvent = await Users.findOneAndUpdate(
             { email: email },
-            { bookingTickets: bookingTickets },
+            { bookingTickets:tickets },
             { new: true }
         ).exec();
         return updateBookingEvent;

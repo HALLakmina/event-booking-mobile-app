@@ -29,9 +29,21 @@ router.get('/', async (req, res, next) => {
       return responseUtils.interServerErrorResponse(res);
     }
 })
-  
+
+router.get('/:id', validator.validatorReqPath(validatorConfig.eventsReqPathValidatorConfig), async (req, res, next) => {
+  try{
+    const id = req.params.id;
+    const foundEvent = await events.findById(id);
+    return responseUtils.okResponse(res, foundEvent)
+  }
+  catch(error){
+    console.log(error)
+    return responseUtils.interServerErrorResponse(res);
+  }
+})
+
+
 router.put('/:id', validator.validatorReqPath(validatorConfig.eventsReqPathValidatorConfig), validator.validatorReqBody(validatorConfig.eventsReqBodyValidatorUpdateConfig), async (req, res, next) => {
-    console.log("RUN")
     try{
         const id = req.params.id;
         const payload = req.body;

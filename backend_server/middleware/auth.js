@@ -7,7 +7,7 @@ const JWT_SECRET  = process.env.JWT_SECRET;
 
 const verifyToken = async (req, res, next) => {
     const access_token = req.headers["access-token"];
-
+    console.log(access_token)
     if(!access_token){
         return responseUtils.validationErrorResponse(res,`Token is required.`);
     }
